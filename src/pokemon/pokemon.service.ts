@@ -27,8 +27,8 @@ export class PokemonService {
     }
   }
 
-  findAll() {
-    return `This action returns all pokemon`;
+  async findAll() {
+    return await this.pokemonModel.find({});
   }
 
   async findOne(term: string) {
@@ -70,8 +70,11 @@ export class PokemonService {
   }
 
   async remove(id: string) {
-    const pokemon = await this.findOne(id);
-    await pokemon.deleteOne();
+    const { deletedCount } = await this.pokemonModel.deleteOne({ _id: id });
+    if (!deletedCount)
+      throw new BadRequestException(`Pokemon with id ${id} does not exist`);
+
+    return;
   }
 
   private handleExceptions(error: any, message: string) {
