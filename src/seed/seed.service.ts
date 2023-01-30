@@ -15,7 +15,7 @@ export class SeedService {
 
   async executeSeed() {
     const data = await this.http.get<PokeResponse>(
-      'https://pokeapi.co/api/v2/pokemon?limit=1&offset=601',
+      'https://pokeapi.co/api/v2/pokemon?limit=500',
     );
 
     const pokemonToInsert: { name: string; no: number }[] = [];
