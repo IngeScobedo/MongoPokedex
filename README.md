@@ -29,7 +29,7 @@ docker-compose up -d
 npm run start:dev
 ```
 
-# Ejecutar en desarrollo
+# Ejecutar en producción
 
 1. Crear el archivo ```.env.prod```
 2. Llenar las variables de entorno definidas en el ```.env.prod```
