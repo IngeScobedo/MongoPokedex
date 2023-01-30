@@ -22,11 +22,20 @@ docker-compose up -d
 ```
 5. Clonar el archivo ```.env.example``` y renombrar la copia a ```.env```
 
-6. Llenar las variables de entorno deinidas en el ```.env```
+6. Llenar las variables de entorno definidas en el ```.env```
 
 7. Ejecutar la aplicación en dev:
 ```
 npm run start:dev
+```
+
+# Ejecutar en desarrollo
+
+1. Crear el archivo ```.env.prod```
+2. Llenar las variables de entorno definidas en el ```.env.prod```
+3. Crear la nueva imagen
+```
+docker-compose -f docker-compose.prod.yaml --env-file .env.prod up --build
 ```
 
 ## Stack usado
